@@ -1,5 +1,17 @@
+@font-face {
+  font-family: "Outfit";
+  src: url(./assets/fonts/outfit/Outfit-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Young-Serif";
+  src: url(./assets/fonts/young-serif/YoungSerif-Regular.ttf) format("truetype");
+}
+
 body{
   background-color: #F3E4D7;
+  font-family: "Outfit", sans-serif;
+  color: hsl(0, 0%, 44%);
 }
 
 .recipe-container{
@@ -8,7 +20,7 @@ body{
   background-color: white;
   border-radius: 20px;
   padding: 40px;
-  align-items: center;
+  align-items: start;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -18,19 +30,112 @@ body{
 .prep-container{
   background-color: #FFF6FC;
   margin-bottom: 20px;
+  padding-bottom: 20px;
   border-radius: 20px;
   width: 100%;
+
+}
+
+.list-container ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-container ul li{
+  position: relative;
+  padding-left: 80px;
+}
+
+.prep-container ul li::before{
+  content: "•";
+  position: absolute;
+  left: 50px;
+  color: #633249;
+}
+
+.ingredients-container ul li::before{
+  content: "•";
+  position: absolute;
+  left: 50px;
+  color: #814933;
+}
+
+h1, h2{
+  font-family: "Young-Serif", serif;
+}
+
+h1{
+  color: rgb(48, 45, 44);
 }
 
 h3.prep-text{
   color: #633249;
+  margin-left: 50px;
 }
 
 h2.section-title{
   color: #814933
 }
 
+.nutrition-facts{
+  color: #814933;
+  font-weight: bold;
+}
+
 img{
   border-radius: 20px;
   width: 100%;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+
+}
+
+td{
+  text-align: left;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+td.left-padding{
+  padding-left: 50px;
+}
+
+tr{
+  border-bottom: 1px solid #EAEAEA;
+  border-width: 2px;
+}
+
+th{
+  padding-left: 20px;
+}
+
+tr:last-child{
+  border-bottom: none;
+}
+
+.custom-ol{
+  counter-reset: my-awesome-counter;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.custom-ol li{
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 10px;
+  counter-increment: my-awesome-counter;
+}
+
+.custom-ol li::before{
+  content: counter(my-awesome-counter) ".";
+  position: absolute;
+  left: 0;
+  color: #814933;
+  font-weight: bold;
 }
